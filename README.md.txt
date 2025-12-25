@@ -1,85 +1,111 @@
 # AI Resume–Job Matching System
 
-An AI-based resume screening system that compares multiple resumes against a job description, calculates match scores, and performs skill gap analysis using NLP techniques.
+##  Overview
 
----
+The AI Resume–Job Matching System is an NLP-based application that automatically matches multiple resumes with a given job description.
+It analyzes resume content, computes relevance scores using TF-IDF and cosine similarity, performs skill gap analysis, and ranks resumes based on suitability.
 
-## 🚀 Features
-- Parses multiple resume PDFs
-- Reads job descriptions from text files
-- Calculates resume–job match scores using TF-IDF and cosine similarity
-- Extracts and compares skills between resumes and job descriptions
-- Ranks resumes from best to worst match
-- Provides explainable output (matching & missing skills)
+This project demonstrates practical application of Natural Language Processing (NLP) techniques for recruitment automation.
 
----
 
-## 🧠 How It Works (High Level)
-1. Resume PDFs and job descriptions are converted into text
-2. Text is vectorized using TF-IDF
-3. Cosine similarity is used to compute match scores
-4. Predefined skill keywords are extracted from both resumes and job descriptions
-5. Skill gap analysis identifies missing and matching skills
-6. Resumes are ranked based on match score
+## Features
+   PDF Resume Parsing (supports multiple resumes)
+   Job Description Text Parsing
+   TF-IDF Vectorization + Cosine Similarity Scoring
 
----
+🧠 Skill Gap Analysis
+    Identifies matched skills
+    Highlights missing skills
 
-## 🛠 Tech Stack
-- Python
-- scikit-learn
-- PyPDF2
-- Natural Language Processing (NLP)
+🏆 Automatic Resume Ranking
+🧪 Tested locally with real resume and job description files
 
----
 
-## 📂 Project Structure
+## Tech Stack
+Programming Language: Python
+Libraries & Tools:
+scikit-learn
+pandas
+numpy
+PyPDF2
+nltk
+
+
+Concepts Used:
+Natural Language Processing (NLP)
+Text preprocessing
+TF-IDF
+Cosine similarity
+
+## Project Structure
 AI-Resume-Job-Matching-System/
 │
 ├── data/
-│ ├── resume/
-│ │ └── sample_resume.pdf
-│ ├── jobs/
-│ │ └── sample_job.txt
+│   ├── resumes/              # PDF resumes
+│   └── job_description/      # Job description text
 │
+├── resume_parser.py
+├── job_parser.py
+├── text_loader.py
 ├── main.py
 ├── requirements.txt
 └── README.md
 
 
----
+## How to Run the Project
 
-## ▶️ How to Run
-1. Clone the repository
-2. Install dependencies:
+1️⃣ Clone the repository
+git clone https://github.com/Dhanush-K-Git/AI-Resume-Job-Matching-System.git
+cd AI-Resume-Job-Matching-System
 
+2️⃣ Install dependencies
 pip install -r requirements.txt
-3. Run the application:
 
-python main.py
+3️⃣ Add files
+Place resume PDFs inside:data/resumes/
+Place job description text file inside:data/job_description/
 
----
+4️⃣ Run the application
+  python main.py
 
-## 📌 Sample Output
+## Sample Output
+  Resume: Resume_1.pdf
+  Match Score: 0.82
+  Matched Skills: Python, NLP, Machine Learning
+  Missing Skills: Docker, AWS
 
----
-Resume Ranking (Best Match First)
+  Resume: Resume_2.pdf
+  Match Score: 0.65
 
-Resume: ai_ml_sample_resume.pdf
-Match Score : 34.82 %
-Matching Skills : python, machine learning, nlp
-Missing Skills : tensorflow, pytorch
+  Top Ranked Resume: Resume_1.pdf
 
 
----
+## How It Works
 
-## 📈 Future Improvements
-- Support for DOCX resumes
-- Skill weightage based on importance
-- Web interface using Streamlit
-- Integration with embeddings or LLMs
+-Extracts text from PDF resumes
+-Preprocesses resume and job description text
+-Converts text into TF-IDF vectors
+-Computes cosine similarity scores
+-Performs skill matching against predefined skill sets
+-Ranks resumes based on relevance score
 
----
+## 🎯 Use Case
+This system can be used by recruiters or HR teams to:
+- Automatically shortlist resumes
+- Identify skill gaps for candidates
+- Reduce manual resume screening effort
+- Improve hiring efficiency
 
-## 👤 Author
+
+## Future Enhancements
+
+Integrate transformer-based embeddings (BERT)
+Add Streamlit web interface
+Support DOCX resumes
+Improve skill extraction using skill taxonomy
+Deploy as a web application
+
+
+## Author
 Dhanush Kumar
-
+GitHub: https://github.com/Dhanush-K-Git
