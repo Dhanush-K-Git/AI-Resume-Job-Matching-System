@@ -1,0 +1,5 @@
+We are looking for an AI/ML Engineer with strong knowledge of Python,
+machine learning algorithms, deep learning concepts, and NLP.
+The candidate should be experienced with libraries such as scikit-learn,
+TensorFlow or PyTorch, and should understand data preprocessing,
+model evaluation, and deployment concept and also with projects.

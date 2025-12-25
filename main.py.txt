@@ -1,0 +1,11 @@
+def load_text(file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        return file.read()
+
+resume_text = load_text("data/resume_text.txt")
+job_text = load_text("data/job_description.txt")
+
+print("Resume text loaded successfully")
+print("Job description loaded successfully")
+
+
