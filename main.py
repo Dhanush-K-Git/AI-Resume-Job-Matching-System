@@ -1,3 +1,12 @@
+import re
+
+def normalize_text(text):
+    text = text.lower()
+    text = text.replace("&", " ")
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
 import os
 from PyPDF2 import PdfReader
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -9,12 +18,14 @@ SKILLS = [
     "machine learning",
     "deep learning",
     "nlp",
-    "scikit-learn",
+    "scikit learn",
     "tensorflow",
     "pytorch",
     "data analysis",
     "pandas",
-    "numpy"
+    "numpy",
+    "TF-IDF",
+    "cosine similarity"
 ]
 
 
@@ -38,7 +49,8 @@ print("-" * 35)
 
 
 # ---- Extract skills from job description ----
-job_text_lower = job_text.lower()
+job_text_lower = normalize_text(job_text)
+
 
 job_skills = []
 for skill in SKILLS:
@@ -58,7 +70,7 @@ for resume_file in resume_files:
     resume_text = load_pdf_text(resume_path)
 
     # ---- Extract skills from resume ----
-    resume_text_lower = resume_text.lower()
+    resume_text_lower = normalize_text(resume_text)
 
     resume_skills = []
     for skill in SKILLS:
@@ -77,7 +89,8 @@ for resume_file in resume_files:
 
     # ---- Similarity score ----
     vectorizer = TfidfVectorizer(stop_words="english")
-    vectors = vectorizer.fit_transform([resume_text, job_text])
+    vectors = vectorizer.fit_transform([resume_text_lower, job_text_lower])
+
 
     similarity = cosine_similarity(vectors[0], vectors[1])[0][0]
 
