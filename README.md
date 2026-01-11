@@ -18,3 +18,8 @@ This project is a high-performance **Semantic Search Engine** designed to rank r
 * **Evolved from TF-IDF:** Replaced word-frequency matching with **Deep Learning embeddings** for better synonym handling.
 * **Persistent Database:** Integrated ChromaDB to handle scaling and local data storage.
 * **Isolated Environment:** Implemented a dedicated `.venv` for professional dependency management.
+## 🚀 How to Run the Project
+### 1. Clone & Setup
+```powershell
+git clone [https://github.com/Dhanush-K-Git/AI-Resume-Job-Matching-System.git](https://github.com/Dhanush-K-Git/AI-Resume-Job-Matching-System.git)
+cd AI-Resume-Job-Matching-System
